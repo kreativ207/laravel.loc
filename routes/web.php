@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/first-page', function (){
+    return "<h1 style='font-family: Arial;'>This is my first page in Laravel</h1>";
+});
+
+Route::get('/post/{id}', function ($id){
+    return "Post ID - $id";
+});
