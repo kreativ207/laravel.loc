@@ -26,6 +26,17 @@ Route::get('hello', function (){
     // view -> $name => Nikolay, $lastName => Old
 });
 
+Route::get('/laravel', function (){
+    return view('laravel', [
+        'laravel' => [
+            "Laravel Jetstream",
+            "Models Directory",
+            "Model Factory Classes"
+        ]
+
+    ]);
+});
+
 Route::get('test', function (){
     return view('test');
 });
