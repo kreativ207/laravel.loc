@@ -18,8 +18,9 @@ Route::get('/', function () {
 });
 
 Route::get('hello', function (){
-    return view('hello');
+    return view('template.hello');
 });
+
 
 Route::get('/first-page', function (){
     return "<h1 style='font-family: Arial;'>This is my first page in Laravel</h1>";
