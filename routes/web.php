@@ -18,8 +18,13 @@ Route::get('/', function () {
 });
 
 Route::get('hello', function (){
-    return view('template.hello');
+    return view('hello');
 });
+
+Route::get('test', function (){
+    return view('test');
+});
+
 
 
 Route::get('/first-page', function (){
