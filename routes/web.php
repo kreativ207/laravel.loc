@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('hello', function (){
+    return view('hello');
+});
+
 Route::get('/first-page', function (){
     return "<h1 style='font-family: Arial;'>This is my first page in Laravel</h1>";
 });
