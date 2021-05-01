@@ -21,7 +21,7 @@ Route::get('hello', function (){
     return view('hello', [
         'name' => 'Nikolay',
         'lastName' => 'Old',
-        'skills' => ['HTML5', 'CSS3', 'VUE.js', 'laravel']
+//        'skills' => ['HTML5', 'CSS3', 'VUE.js', 'laravel']
     ]);
     // view -> $name => Nikolay, $lastName => Old
 });
