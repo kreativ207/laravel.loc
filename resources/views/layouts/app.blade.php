@@ -10,6 +10,7 @@
 
 </head>
 <body>
+@include('components.navbar')
 <div class="container mt-5">
     @yield('content')
 </div>
