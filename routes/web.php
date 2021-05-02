@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PagesController;
+use App\Http\Controllers\LaravelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,30 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('hello', function (){
-    return view('hello', [
-        'name' => 'Nikolay',
-        'lastName' => 'Old',
-        'skills' => ['HTML5', 'CSS3', 'VUE.js', 'laravel']
-    ]);
-    // view -> $name => Nikolay, $lastName => Old
-});
-
-Route::get('/laravel', function (){
-    return view('laravel', [
-        'laravel' => [
-            "Laravel Jetstream",
-            "Models Directory",
-            "Model Factory Classes"
-        ]
-
-    ]);
-});
-
-Route::get('test', function (){
-    return view('test');
-});
-
+Route::get('/hello', [PagesController::class, "helloPage"]);
+Route::get('/test', [PagesController::class, "testPage"]);
+Route::get('/laravel', [LaravelController::class, "laravelPage"]);
 
 
 Route::get('/first-page', function (){
@@ -50,3 +31,29 @@ Route::get('/first-page', function (){
 Route::get('/post/{id}', function ($id){
     return "Post ID - $id";
 });
+
+/*Route::get('hello', function (){
+    return view('hello', [
+        'name' => 'Nikolay',
+        'lastName' => 'Old',
+        'skills' => ['HTML5', 'CSS3', 'VUE.js', 'laravel']
+    ]);
+    // view -> $name => Nikolay, $lastName => Old
+});*/
+
+/*Route::get('test', function (){
+    return view('test');
+});*/
+
+/*Route::get('/laravel', function (){
+    return view('laravel', [
+        'laravel' => [
+            "Laravel Jetstream",
+            "Models Directory",
+            "Model Factory Classes"
+        ]
+
+    ]);
+});*/
+
+

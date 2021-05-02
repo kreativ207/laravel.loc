@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="jumbotron">
+        <p>{{$stringTest}}</p>
         <h1 class="display-4">Hello - {{$name}}</h1>
     {{--    <h1 class="display-4">Hello - {{($name == "Nikolay") ? $lastName : $name}}</h1>--}}
     </div>
