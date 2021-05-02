@@ -19,8 +19,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
 Route::get('/hello', [PagesController::class, "helloPage"]);
-Route::get('/test', [PagesController::class, "testPage"]);
+Route::get('/todos', [PagesController::class, "todosPage"]);
+Route::get('/todos/done', [PagesController::class, "todosDone"]);
+Route::get('/todos/not-done', [PagesController::class, "todosNotDone"]);
 Route::get('/laravel', [LaravelController::class, "laravelPage"]);
 
 
