@@ -5,6 +5,7 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\LaravelController;
 use App\Http\Controllers\StudentsController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ArticlesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,8 +26,12 @@ Route::get('/', function () {
 
 Route::get('/hello', [PagesController::class, "helloPage"]);
 
-Route::get('/blog', [BlogController::class, "blogPage"]);
+Route::get('/blog', [BlogController::class, "blogPage"])->name('blog');
 Route::get("/article/{id}", [BlogController::class, "articlePage"]);
+Route::post("/article", [ArticlesController::class, "store"]);
+Route::post("/article/delete", [ArticlesController::class, "destroy"]);
+Route::get("/article/update/{id}", [PagesController::class, "articleUpdatePage"]);
+Route::post("/article/update/", [ArticlesController::class, "update"]);
 
 Route::get('/todos', [PagesController::class, "todosPage"]);
 Route::get('/todos/done', [PagesController::class, "todosDone"]);

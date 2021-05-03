@@ -1,6 +1,6 @@
-@extends('layouts.layout')
+@extends('layouts.app')
 
-@section('laravel')
+@section('content')
     @if(isset($laravel) && count($laravel) > 0)
         <ul class="list-group">
             @foreach($laravel as $lar)

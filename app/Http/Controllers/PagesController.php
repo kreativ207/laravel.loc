@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use App\Models\Todo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -69,6 +70,18 @@ class PagesController extends Controller
 
         return view('todos_not_done', [
             "todos" => $todos
+        ]);
+    }
+
+    public function articleUpdatePage($id)
+    {
+        $article = Article::find($id);
+        if(!$article) {
+            return abort(404);
+        }
+
+        return view('article_update', [
+            'article' => $article
         ]);
     }
 
