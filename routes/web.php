@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\LaravelController;
 use App\Http\Controllers\StudentsController;
+use App\Http\Controllers\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,9 @@ Route::get('/', function () {
 
 
 Route::get('/hello', [PagesController::class, "helloPage"]);
+
+Route::get('/blog', [BlogController::class, "blogPage"]);
+Route::get("/article/{id}", [BlogController::class, "articlePage"]);
 
 Route::get('/todos', [PagesController::class, "todosPage"]);
 Route::get('/todos/done', [PagesController::class, "todosDone"]);
